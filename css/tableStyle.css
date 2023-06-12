@@ -1,0 +1,363 @@
+
+/*--------------------------------------------------------------------------------*/
+
+input:focus, textarea:focus{
+    outline-color: #4f5466;
+}
+
+.container-tb{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #cccbcb;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #dadada;
+    border-radius: 4px;
+    background-color: #ffffff;
+    transition: all 0.3s;
+}
+
+.tb-topheader{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.6rem;
+    background-color: #e6e6e6;
+    border-bottom: 1px solid #cccbcb;
+}
+
+#search {
+    border-radius: 4px 0 0 4px;
+    padding: 0.16rem 0.4rem;
+    min-width: 300px;
+    outline: none;
+}
+
+#search-btn{
+    border-radius: 0 4px 4px 0;
+    padding: 0.16rem 0.4rem;
+    color: #757575;
+    background-color: #dadada;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#titleMain{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #e9e9e9;
+}
+
+
+.search-container input, button {
+    height: 2rem;
+    width: auto;
+    border: none;
+    background: none;
+}
+
+#addNew{
+    background-color: #2D2E32;
+    color: white;
+    border-radius: 4px;
+    height: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.table-content{
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+th, td {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+td{
+    padding: 0.4rem 0.2rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+th {
+    background-color: #e6e6e6;
+    color: #222222;
+    padding: 0.5rem ;
+}
+
+.act-area{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.act-wrpp{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.btn-act{
+    font-size: 20px;
+    border-radius: 50%;
+    color: #2D2E32;
+    cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------------------------*/
+
+.modal-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22222236;
+    transform: scale(1.1);
+    transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;  
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+.modalAdd{
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 40rem;
+    max-width: 100%;
+    height: auto;
+    padding: 0.8rem 1rem;
+    transition: all ease 0.4s;
+}
+
+.modalHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalBody{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.modalinput-box{
+    display: flex;
+    flex-direction: column;  
+    padding: 0.5rem 0;
+}
+
+.modalinput-box input, select {
+    padding: 0.2rem;
+}
+
+#closemodal-box{
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: crimson;
+}
+
+.modalDelete{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22222236;
+    transform: scale(1.1);
+    transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.modalDelete.show {
+    opacity: 1;
+    pointer-events: auto;  
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+.modalContainerDelete{
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 30rem;
+    height: auto;
+    padding: 0.8rem 1rem;
+    transition: all ease 0.4s;
+}
+
+.modalHeaderDelete{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalBodyDelete{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#causeInput{
+   resize: none;
+   padding: 0.2rem;
+   margin: 0.2rem 0 0.8rem 0;
+   height: 8rem;
+}
+
+.modalBodyDelete p {
+    text-align: center;
+}
+
+.btnChoose{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#confirmDelete{
+    background-color: limegreen;
+    padding: 0 1.6rem ;
+    color:#ffffff;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#denyDelete{
+    background-color: crimson;
+    padding: 0 1.6rem ;
+    color:#ffffff;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.modalEdit{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22222236;
+    transform: scale(1.1);
+    transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.modalEdit.show {
+    opacity: 1;
+    pointer-events: auto;  
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+.modalContainerEdit{
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 40rem;
+    max-width: 100%;
+    height: auto;
+    padding: 0.8rem 0.8rem;
+    transition: all ease 0.4s;
+}
+
+.modalHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalBody{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.modalinput-box{
+    display: flex;
+    flex-direction: column;  
+    padding: 0.5rem 0;
+}
+
+.modalinput-box input {
+    padding: 0.2rem;
+}
+
+.confirmBtn{
+    background-color: #2D2E32;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 2.4rem;
+    margin-top: 0.6rem;
+}
+
+#closemodal-box{
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: crimson;
+}
+
+
+.modalinput-box{
+    display: flex;
+    flex-direction: column;  
+}
+
+.modalinput-box input {
+    padding: 0.2rem;
+}
